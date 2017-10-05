@@ -37,7 +37,7 @@ def run_sample():
         block_blob_service.set_container_acl(container_name, public_access=PublicAccess.Container)
 
         # Create a file in Documents to test the upload and download.
-        local_path=os.path.expanduser("~\Documents")
+        local_path=os.path.expanduser("~/Documents")
         local_file_name ="QuickStart_" + str(uuid.uuid4()) + ".txt"
         full_path_to_file =os.path.join(local_path, local_file_name)
 
