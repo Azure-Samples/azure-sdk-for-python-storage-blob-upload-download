@@ -20,8 +20,8 @@ from azure.storage.blob import BlockBlobService, PublicAccess
 
 def run_sample():
     # Create a CloudStorageAccount instance pointing to your storage account.
-    account_name = 'storageblobdotnetrqs'
-    account_key = 'BjdhmIEqigYQCAZf1vgrpoXuAU3Jna53GlCx+CctdoqnIgYdfFhCm8J4ZMyhWd09yDlSLRH3adw7kPRaZ9Qlaw=='
+    account_name = 'accountname'
+    account_key = 'accountkey'
 
     try:
         storage_account = CloudStorageAccount(account_name, account_key)
