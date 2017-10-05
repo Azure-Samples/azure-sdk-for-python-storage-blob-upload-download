@@ -53,4 +53,3 @@ account_name = 'accountname'
 account_key = 'accountkey'
 storage_account = CloudStorageAccount(account_name, account_key)
 ```
-**Note:** : Linux users should change **~\Documents** to **~/Documents** for the local_path value
