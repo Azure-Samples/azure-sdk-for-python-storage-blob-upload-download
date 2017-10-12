@@ -12,7 +12,6 @@
 # places, or events is intended or should be inferred.
 #----------------------------------------------------------------------------------
 
-
 import os, uuid, sys
 from azure.storage.blob import BlockBlobService, PublicAccess
 
@@ -20,7 +19,7 @@ from azure.storage.blob import BlockBlobService, PublicAccess
 def run_sample():
     try:
         # Create the BlockBlockService that is used to call the Blob service for the storage account
-        block_blob_service = BlockBlobService(account_name='storageblobdotnetrqs', account_key='BjdhmIEqigYQCAZf1vgrpoXuAU3Jna53GlCx+CctdoqnIgYdfFhCm8J4ZMyhWd09yDlSLRH3adw7kPRaZ9Qlaw==')
+        block_blob_service = BlockBlobService(account_name='accountname', account_key='accountkey')
 
         # Create a container called 'quickstartblobs'.
         container_name ='quickstartblobs'
