@@ -12,22 +12,14 @@
 # places, or events is intended or should be inferred.
 #----------------------------------------------------------------------------------
 
-
 import os, uuid, sys
-from azure.storage import CloudStorageAccount
 from azure.storage.blob import BlockBlobService, PublicAccess
 
 
 def run_sample():
-    # Create a CloudStorageAccount instance pointing to your storage account.
-    account_name = 'accountname'
-    account_key = 'accountkey'
-
     try:
-        storage_account = CloudStorageAccount(account_name, account_key)
-
         # Create the BlockBlockService that is used to call the Blob service for the storage account
-        block_blob_service = storage_account.create_block_blob_service()
+        block_blob_service = BlockBlobService(account_name='accountname', account_key='accountkey')
 
         # Create a container called 'quickstartblobs'.
         container_name ='quickstartblobs'
