@@ -62,8 +62,9 @@ def run_sample():
         input()
 
         # Clean up resources. This includes the container and the temp files
-        block_blob_service.delete_blob(container_name, local_file_name)
         block_blob_service.delete_container(container_name)
+        os.remove(full_path_to_file)
+        os.remove(full_path_to_file2)
     except Exception as e:
         print(e)
 
