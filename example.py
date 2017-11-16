@@ -1,19 +1,32 @@
-#----------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------
 # Microsoft Developer & Platform Evangelism
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND,
 # EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES
 # OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.
-#----------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------
 # The example companies, organizations, products, domain names,
 # e-mail addresses, logos, people, places, and events depicted
 # herein are fictitious.  No association with any real company,
 # organization, product, domain name, email address, logo, person,
 # places, or events is intended or should be inferred.
-#----------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------
 
 import os, uuid, sys
 from azure.storage.blob import BlockBlobService, PublicAccess
+
+# ---------------------------------------------------------------------------------------------------------
+# Method that creates a test file in the 'Documents' folder.
+# This sample application creates a test file, uploads the test file to the Blob storage,
+# lists the blobs in the container, and downloads the file with a new name.
+# ---------------------------------------------------------------------------------------------------------
+# Documentation References:
+# Associated Article - https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-python
+# What is a Storage Account - http://azure.microsoft.com/en-us/documentation/articles/storage-whatis-account/
+# Getting Started with Blobs-https://docs.microsoft.com/en-us/azure/storage/blobs/storage-python-how-to-use-blob-storage
+# Blob Service Concepts - http://msdn.microsoft.com/en-us/library/dd179376.aspx
+# Blob Service REST API - http://msdn.microsoft.com/en-us/library/dd135733.aspx
+# ----------------------------------------------------------------------------------------------------------
 
 
 def run_sample():
@@ -69,6 +82,7 @@ def run_sample():
         print(e)
 
 
+# Main method.
 if __name__ == '__main__':
     run_sample()
 
