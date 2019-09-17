@@ -49,5 +49,5 @@ After your storage account is created, it is pinned to the dashboard. Click on i
 In the application, you must provide your storage account name and account key to create a BlockBlobService object. Open the `example.py` file from the Solution Explorer in your IDE. Replace **accountname** and **accountkey** with your account name and key. 
 
 ```python
-block_blob_service = BlockBlobService(account_name='accountname', account_key='accountkey')
+block_blob_service = BlobServiceClient.from_connection_string(conn_str="Connection string")
 ```

@@ -24,7 +24,7 @@
 
 
 import os, uuid, sys
-from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient, PublicAccess
+from azure.storage.blob import BlockBlobService, PublicAccess
 
 # ---------------------------------------------------------------------------------------------------------
 # Method that creates a test file in the 'Documents' folder.
@@ -42,12 +42,15 @@ from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient, P
 
 def run_sample():
     try:
-        # Create the BlobServiceClient that is used to call the Blob service for the storage account
-        block_blob_service = BlobServiceClient.from_connection_string(conn_str="Connection string")
+        # Create the BlockBlockService that is used to call the Blob service for the storage account
+        block_blob_service = BlockBlobService(account_name='accountname', account_key='accountkey')
 
-        # Create a container called 'quickstartblobs' and Set the permission so the blobs are public.
+        # Create a container called 'quickstartblobs'.
         container_name ='quickstartblobs'
-        block_blob_service.create_container(container_name, public_access=PublicAccess.Container)
+        block_blob_service.create_container(container_name)
+
+        # Set the permission so the blobs are public.
+        block_blob_service.set_container_acl(container_name, public_access=PublicAccess.Container)
 
         # Create a file in Documents to test the upload and download.
         local_path=os.path.expanduser("~/Documents")
@@ -63,14 +66,11 @@ def run_sample():
         print("\nUploading to Blob storage as blob" + local_file_name)
 
         # Upload the created file, use local_file_name for the blob name
-        blob_client = BlobClient.from_connection_string("Connection string", container=container_name, blob=local_file_name)
-        with open(full_path_to_file, "rb") as data:
-            blob_client.upload_blob(data)
+        block_blob_service.create_blob_from_path(container_name, local_file_name, full_path_to_file)
 
         # List the blobs in the container
         print("\nList blobs in the container")
-        container = ContainerClient.from_connection_string("Connection string", container=container_name)
-        generator = container.list_blobs()
+        generator = block_blob_service.list_blobs(container_name)
         for blob in generator:
             print("\t Blob name: " + blob.name)
 
@@ -78,8 +78,7 @@ def run_sample():
         # Add '_DOWNLOADED' as prefix to '.txt' so you can see both files in Documents.
         full_path_to_file2 = os.path.join(local_path, str.replace(local_file_name ,'.txt', '_DOWNLOADED.txt'))
         print("\nDownloading blob to " + full_path_to_file2)
-        with open(full_path_to_file2, "wb") as my_blob:
-            my_blob.writelines(blob_client.download_blob())
+        block_blob_service.get_blob_to_path(container_name, local_file_name, full_path_to_file2)
 
         sys.stdout.write("Sample finished running. When you hit <any key>, the sample will be deleted and the sample "
                          "application will exit.")
