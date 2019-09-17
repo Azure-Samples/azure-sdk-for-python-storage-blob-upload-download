@@ -16,6 +16,6 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 # Folders introduction
 Two folders are referred to different version of Azure SDK.
 * storage-blobs-python-quickstart-v3 referenced to following packages:
-  * [azure-storage-blob]
+  * [azure-storage-blob](https://pypi.org/project/azure-storage-blob/),2.1.0 
 * storage-blobs-python-quickstart-v4 referenced to following packages:
-  * [azure-storage-blob]
+  * [azure-storage-blob](https://pypi.org/project/azure-storage-blob/12.0.0b2/),12.0.0b2
