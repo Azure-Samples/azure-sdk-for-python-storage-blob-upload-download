@@ -5,7 +5,7 @@ If you don't have an Azure subscription, create a [free account](https://azure.m
 
 ### Create a Storage Account using the Azure Portal
 
-Step 1 : Create a new general-purpose storage Account to use for this tutorial. 
+Step 1 : Create a new general-purpose Storage Account to use for this tutorial. 
  
 *  Go to the [Azure Portal](https://portal.azure.com) and log in using your Azure account. 
 *  Select **New** > **Storage** > **Storage account**. 
