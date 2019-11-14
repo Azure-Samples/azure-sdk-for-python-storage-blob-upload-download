@@ -1,17 +1,28 @@
 # Quickstart with Azure Storage Blobs SDK for Python
 
+### SDK Versions
+You will find the following folders: storage-blobs-python-quickstart-v3, which references the 2.1.0 SDK and storage-blobs-python-quickstart-v4, which uses the 12.0.0 version of the SDK.
+* To use the latest Azure SDK version [storage-blobs-python-quickstart-v4], please run the following commands:
+```
+    pip install azure-storage-blob==12.0.0
+```
+* For the previous Azure SDK version [storage-blobs-python-quickstart-v3], please run the following commands:
+```
+    pip install azure-storage-blob==2.1.0
+```
+
 ### Prerequisites
 If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
 
 ### Create a Storage Account using the Azure Portal
 
-Step 1 : Create a new general-purpose storage Account to use for this tutorial. 
+Step 1 : Create a new general-purpose Storage Account to use for this tutorial. 
  
 *  Go to the [Azure Portal](https://portal.azure.com) and log in using your Azure account. 
 *  Select **New** > **Storage** > **Storage account**. 
 *  Select your Subscription. 
 *  For `Resource group`, create a new one and give it a unique name. 
-*  Enter a name for your storage Account. The name must be between 3 and 24 characters in length and may contain numbers and lowercase letters only. It must also be unique.
+*  Enter a name for your storage Account.
 *  Select the `Location` to use for your Storage Account.
 *  Set `Account kind` to **StorageV2(general purpose v2)**.
 *  Set `Performance` to **Standard**. 
@@ -36,10 +47,7 @@ Windows
 setx AZURE_STORAGE_CONNECTIONSTRING "<yourconnectionstring>" 
 ```
 
-### Folders Introduction
-You will find the following folders: storage-blobs-python-quickstart-v3, which references the 2.1.0 SDK and storage-blobs-python-quickstart-v4, which uses the 12.0.0 version of the SDK.
-
-### This Quickstart shows how to do some basic operations of Storage Blobs.
+### This Quickstart shows how to do the following operations of Storage Blobs.
 - Create a Storage Account using the Azure Portal.
 - Create a container.
 - Upload a file to block blob.
