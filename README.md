@@ -1,20 +1,24 @@
+---
+page_type: sample
+languages:
+- python
+products:
+- azure
+- azure-storage
+description: "A simple sample project to help you get started using Azure Storage with python as the development language."
+---
+
 # Quickstart with Azure Storage Blobs SDK for Python
 
-### SDK Versions
-You will find the following folders: storage-blobs-python-quickstart-v3, which references the 2.1.0 SDK and storage-blobs-python-quickstart-v4, which uses the 12.0.0 version of the SDK.
-* To use the latest Azure SDK version [storage-blobs-python-quickstart-v4], please run the following commands:
-```
-    pip install azure-storage-blob==12.0.0
-```
-* For the previous Azure SDK version [storage-blobs-python-quickstart-v3], please run the following commands:
-```
-    pip install azure-storage-blob==2.1.0
-```
+## SDK Versions
+In this sample, you will find the following folders:v
+* **[storage-blobs-python-quickstart-v3](./storage-blobs-python-quickstart-v3)** - references Storage Blobs SDK v2.1.0
+* **[storage-blobs-python-quickstart-v4](./storage-blobs-python-quickstart-v4)** - references Storage Blobs SDK v12.0.0
 
-### Prerequisites
+## Prerequisites
 If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
 
-### Create a Storage Account using the Azure Portal
+## Create a Storage Account using the Azure Portal
 
 Step 1 : Create a new general-purpose Storage Account to use for this tutorial. 
  
@@ -33,21 +37,25 @@ Step 1 : Create a new general-purpose Storage Account to use for this tutorial.
 Step 2 : Copy and save Connection string.
 
 After your Storage Account is created. Click on it to open it. 
-Select **Settings** > **Access keys** > **Primary Key**, copy the associated **Connection string** to the clipboard, then paste it into a text editor for later use.
+Select **Settings** > **Access keys** > **Key1/key**, copy the associated **Connection string** to the clipboard, then paste it into a text editor for later use.
 
-### Set credentials in environment variables 
+## Put the connection string in an environment variable
 
-Linux
-```
-export AZURE_STORAGE_CONNECTIONSTRING="<yourconnectionstring>" 
-```
+This solution requires a connection string be stored in an environment variable securely on the machine running the sample. Follow one of the examples below depending on your operating system to create the environment variable. If using Windows close your open IDE or shell and restart it to be able to read the environment variable.
 
-Windows
-```
-setx AZURE_STORAGE_CONNECTIONSTRING "<yourconnectionstring>" 
+### Linux
+
+```bash
+export AZURE_STORAGE_CONNECTIONSTRING="<yourconnectionstring>"
 ```
 
-### This Quickstart shows how to do the following operations of Storage Blobs.
+### Windows
+
+```cmd
+setx AZURE_STORAGE_CONNECTIONSTRING "<yourconnectionstring>"
+```
+
+## This Quickstart shows how to do the following operations of Storage Blobs.
 - Create a Storage Account using the Azure Portal.
 - Create a container.
 - Upload a file to block blob.
@@ -56,7 +64,7 @@ setx AZURE_STORAGE_CONNECTIONSTRING "<yourconnectionstring>"
 - Delete a blob.
 - Delete the container.
 
-### Contributing
+## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
