@@ -11,7 +11,7 @@ description: "A simple sample project to help you get started using Azure Storag
 # Quickstart with Azure Storage Blobs SDK for Python
 
 ## SDK Versions
-In this sample, you will find the following folders:v
+In this sample, you will find the following folders:
 * **[storage-blobs-python-quickstart-v3](./storage-blobs-python-quickstart-v3)** - references Storage Blobs SDK v2.1.0
 * **[storage-blobs-python-quickstart-v4](./storage-blobs-python-quickstart-v4)** - references Storage Blobs SDK v12.0.0
 
