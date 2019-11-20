@@ -46,13 +46,13 @@ This solution requires a connection string be stored in an environment variable 
 ### Linux
 
 ```bash
-export AZURE_STORAGE_CONNECTIONSTRING="<yourconnectionstring>"
+export AZURE_STORAGE_CONNECTIONSTRING="<YourConnectionString>"
 ```
 
 ### Windows
 
 ```cmd
-setx AZURE_STORAGE_CONNECTIONSTRING "<yourconnectionstring>"
+setx AZURE_STORAGE_CONNECTIONSTRING "<YourConnectionString>"
 ```
 
 ## This Quickstart shows how to do the following operations of Storage Blobs.
