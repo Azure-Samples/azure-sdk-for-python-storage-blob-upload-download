@@ -27,7 +27,7 @@ import os, uuid, sys
 from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient, PublicAccess
 
 # ---------------------------------------------------------------------------------------------------------
-# Method that creates a test file in the 'Documents' folder.
+# Method that creates a test file in the 'Sample' folder.
 # This sample application creates a test file, uploads the test file to the Blob storage,
 # lists the blobs in the container, and downloads the file with a new name.
 # ---------------------------------------------------------------------------------------------------------
