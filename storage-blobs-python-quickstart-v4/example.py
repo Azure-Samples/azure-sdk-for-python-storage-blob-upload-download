@@ -58,7 +58,6 @@ def run_sample():
         full_path_to_file = os.path.join(local_path, local_file_name)
 
         # Write text to the file.
-        
         file = open(full_path_to_file,  'w')
         file.write("Hello, World!")
         file.close()
