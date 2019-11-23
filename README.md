@@ -6,6 +6,7 @@ products:
 - azure
 - azure-storage
 description: "A simple sample project to help you get started using Azure Storage with python as the development language."
+urlFragment: azure-sdk-storage-blobs
 ---
 
 # Quickstart with Azure Storage Blobs SDK for Python
