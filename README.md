@@ -5,25 +5,26 @@ languages:
 products:
 - azure
 - azure-storage
-description: "A simple sample project to help you get started using Azure Storage with python as the development language."
-urlFragment: azure-sdk-storage-blobs
+description: "How to upload and download blobs from Azure Blob Storage with Python."
+urlFragment: upload-download-blobs-python
 ---
 
-# Quickstart with Azure Storage Blobs SDK for Python
+# How to upload and download blobs from Azure Blob Storage with Python
 
 ## SDK Versions
 In this sample, you will find the following folders:
-* **[storage-blobs-python-quickstart-v3](./storage-blobs-python-quickstart-v3)** - references Storage Blobs SDK v3.0
-* **[storage-blobs-python-quickstart-v4](./storage-blobs-python-quickstart-v4)** - references Storage Blobs SDK v12.0.0
+* **v11** - references Storage Blobs SDK v11
+* **v12** - references Storage Blobs SDK v12
 
 ## Prerequisites
-If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
 
-## Create a Storage Account using the Azure Portal
+If you don't have an Azure subscription, create a [free account] before you begin.
+
+### Create a Storage Account using the Azure Portal
 
 Step 1 : Create a new general-purpose Storage Account to use for this tutorial. 
  
-*  Go to the [Azure Portal](https://portal.azure.com) and log in using your Azure account. 
+*  Go to the [Azure Portal] and log in using your Azure account. 
 *  Select **New** > **Storage** > **Storage account**. 
 *  Select your Subscription. 
 *  For `Resource group`, create a new one and give it a unique name. 
@@ -40,23 +41,45 @@ Step 2 : Copy and save Connection string.
 After your Storage Account is created. Click on it to open it. 
 Select **Settings** > **Access keys** > **Key1/key**, copy the associated **Connection string** to the clipboard, then paste it into a text editor for later use.
 
-## Put the connection string in an environment variable
+### Put the connection string in an environment variable
 
 This solution requires a connection string be stored in an environment variable securely on the machine running the sample. Follow one of the examples below depending on your operating system to create the environment variable. If using Windows close your open IDE or shell and restart it to be able to read the environment variable.
 
-### Linux
+Linux
 
 ```bash
 export AZURE_STORAGE_CONNECTIONSTRING="<YourConnectionString>"
 ```
 
-### Windows
+Windows
 
 ```cmd
 setx AZURE_STORAGE_CONNECTIONSTRING "<YourConnectionString>"
 ```
 
-## This Quickstart shows how to do the following operations of Storage Blobs.
+### Set up
+First, clone the repository on your machine:
+
+```bash
+git clone https://github.com/Azure-Samples/azure-sdk-for-python-storage-blob-upload-download.git
+```
+
+Then, switch to the appropriate folder:
+```bash
+cd v11
+```
+or
+```bash
+cd v12
+```
+
+Finally, install the dependencies:
+
+```bash
+pip install
+```
+
+## This sample shows how to do the following operations of Storage Blobs
 - Create a Storage Account using the Azure Portal.
 - Create a container.
 - Upload a file to block blob.
@@ -75,6 +98,15 @@ When you submit a pull request, a CLA-bot will automatically determine whether y
 a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
 provided by the bot. You will only need to do this once across all repos using our CLA.
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+This project has adopted the [Microsoft Open Source Code of Conduct].
+For more information see the [Code of Conduct FAQ] or
+contact [opencode@microsoft.com] with any additional questions or comments.
+
+<!-- LINKS -->
+[Microsoft.Azure.Storage]: https://pypi.org/project/azure-storage/
+[Microsoft.Azure.Storage.Blob]: https://pypi.org/project/azure-storage-blob/12.0.0/
+[Azure Portal]: https://portal.azure.com
+[free account]: https://azure.microsoft.com/free/?WT.mc_id=A261C142F
+[Microsoft Open Source Code of Conduct]: https://opensource.microsoft.com/codeofconduct/
+[Code of Conduct FAQ]: https://opensource.microsoft.com/codeofconduct/faq/
+[opencode@microsoft.com]: mailto:opencode@microsoft.com
