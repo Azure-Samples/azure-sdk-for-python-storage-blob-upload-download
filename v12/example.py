@@ -23,7 +23,9 @@
 
 
 
-import os, uuid, sys
+import os
+import uuid
+import sys
 from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient, PublicAccess
 
 # ---------------------------------------------------------------------------------------------------------
@@ -48,13 +50,14 @@ def run_sample():
 
         # Create a container called 'quickstartblobs' and Set the permission so the blobs are public.
         container_name = 'quickstartblobs'
-        blob_service_client.create_container(container_name, public_access=PublicAccess.Container)
+        blob_service_client.create_container(
+            container_name, public_access=PublicAccess.Container)
 
         # Create Sample folder if it not exists, and create a file in folder Sample to test the upload and download.
         local_path = os.path.expanduser("~/Sample")
         if not os.path.exists(local_path):
             os.makedirs(os.path.expanduser("~/Sample"))
-        local_file_name ="QuickStart_" + str(uuid.uuid4()) + ".txt"
+        local_file_name = "QuickStart_" + str(uuid.uuid4()) + ".txt"
         full_path_to_file = os.path.join(local_path, local_file_name)
 
         # Write text to the file.
@@ -66,7 +69,8 @@ def run_sample():
         print("\nUploading to Blob storage as blob" + local_file_name)
 
         # Upload the created file, use local_file_name for the blob name
-        blob_client = blob_service_client.get_blob_client(container=container_name, blob=local_file_name)
+        blob_client = blob_service_client.get_blob_client(
+            container=container_name, blob=local_file_name)
         with open(full_path_to_file, "rb") as data:
             blob_client.upload_blob(data)
 
@@ -79,7 +83,8 @@ def run_sample():
 
         # Download the blob(s).
         # Add '_DOWNLOADED' as prefix to '.txt' so you can see both files in Documents.
-        full_path_to_file2 = os.path.join(local_path, str.replace(local_file_name ,'.txt', '_DOWNLOADED.txt'))
+        full_path_to_file2 = os.path.join(local_path, str.replace(
+            local_file_name ,'.txt', '_DOWNLOADED.txt'))
         print("\nDownloading blob to " + full_path_to_file2)
         with open(full_path_to_file2, "wb") as my_blob:
             my_blob.writelines([blob_client.download_blob().readall()]) 
@@ -100,6 +105,3 @@ def run_sample():
 # Main method.
 if __name__ == '__main__':
     run_sample()
-
-
-
