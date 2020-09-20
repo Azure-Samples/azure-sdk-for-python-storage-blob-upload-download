@@ -11,10 +11,14 @@ urlFragment: upload-download-blobs-python
 
 # How to upload and download blobs from Azure Blob Storage with Python
 
-## SDK Versions
-In this sample, you will find the following folders:
-* **v11** - references Storage Blobs SDK v11
-* **v12** - references Storage Blobs SDK v12
+## This sample shows how to do the following operations of Storage Blobs with Storage SDK
+- Create a Storage Account using the Azure Portal.
+- Create a container.
+- Upload a file to block blob.
+- List blobs.
+- Download a blob to file.
+- Delete a blob.
+- Delete the container.
 
 ## Prerequisites
 
@@ -58,35 +62,37 @@ setx AZURE_STORAGE_CONNECTIONSTRING "<YourConnectionString>"
 ```
 
 ### Set up
+
 First, clone the repository on your machine:
 
 ```bash
 git clone https://github.com/Azure-Samples/azure-sdk-for-python-storage-blob-upload-download.git
 ```
 
-Then, switch to the appropriate folder:
-```bash
-cd v11
-```
-or
-```bash
-cd v12
-```
-
-Finally, install the dependencies:
+Then, install the dependencies:
 
 ```bash
-pip install
+pip install -r requirements.txt
 ```
 
-## This sample shows how to do the following operations of Storage Blobs
-- Create a Storage Account using the Azure Portal.
-- Create a container.
-- Upload a file to block blob.
-- List blobs.
-- Download a blob to file.
-- Delete a blob.
-- Delete the container.
+Finally, execute the following command to run this sample:
+```bash
+python example.py
+```
+
+### Use latest Storage SDK
+
+The storage SDK package version here is **2.x.x**, if you are using the [latest](https://pypi.org/project/azure-storage-blob/) version of the storage SDK package, please reference to the following examples:
+
+* [blob_samples_hello_world.py](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-blob/samples/blob_samples_hello_world.py)  - Examples for common Storage Blob tasks:
+    * Create a container
+    * Create a block, page, or append blob
+    * Upload a file to blob
+    * Download a blob
+    * Delete a blob
+    * Delete the container
+* [blob_samples_enumerate_blobs.py](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-blob/samples/blob_samples_enumerate_blobs.py)- Examples to enumerate blobs
+    * List blobs.
 
 ## Contributing
 
